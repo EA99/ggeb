@@ -1,6 +1,7 @@
 import ctypes
 import time
 from tkinter import *
+iqi=False
 #TODO LIST:
 #pane recolute käyttöön tekemällä ennenhiiren siirtoja
 #x,y=recolute(hiirenx näytölläsi(numero),hiiren y näytölläsi(numero),näyttösix(numero,näyttösiy(numero)
@@ -10,13 +11,16 @@ from tkinter import *
 #pitäis toimia nyt kaikilla näytöillä
 #sama ennen kaikkia hiiren siirtoja
 def stopperi():
-    pass
+    global iqi
+    iqi=True
+    return
 
 def päällä():
     nappi1.Destroy()
     nappi2.Destroy()
     stopnappi=Button(ikkuna,Label="stop",command = stopperi)
     stopnappi.pack()
+    
     return
 
 def kerää3():
@@ -49,20 +53,29 @@ def kerää3():
     ctypes.windll.user32.SetCursorPos(60,20)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
+    päällä()
+    time10min()
+    return
 
 def kerää1():
     #ihan ylhäällä TODO lista
+    global iqi
+    
     ctypes.windll.user32.SetCursorPos(1278,277)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
+    
     ctypes.windll.user32.SetCursorPos(1104,667)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
+    
     ctypes.windll.user32.SetCursorPos(1135,645) #8
     time.sleep(1)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    alkaa1()
+    päällä()
+    
+    time10min()
     return
 
 def time10min(numero):
