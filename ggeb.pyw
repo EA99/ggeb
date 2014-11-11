@@ -60,22 +60,22 @@ def kerää3():
 def kerää1():
     #ihan ylhäällä TODO lista
     global iqi
-    
-    ctypes.windll.user32.SetCursorPos(1278,277)
+    x,y=recolute(1278,277,1920,1080)
+    ctypes.windll.user32.SetCursorPos(x,y)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    
-    ctypes.windll.user32.SetCursorPos(1104,667)
+    x,y=recolute(1104,667,1920,1080)
+    ctypes.windll.user32.SetCursorPos(x,y)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    
-    ctypes.windll.user32.SetCursorPos(1135,645) #8
+    x,y=recolute(1135,645,1920,1080)
+    ctypes.windll.user32.SetCursorPos(x,y) #8
     time.sleep(1)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
     päällä()
     
-    time10min()
+    time10min(1)
     return
 
 def time10min(numero):
@@ -100,10 +100,13 @@ def recolute(x,y,screenx,screeny):
 
 def alkaa1():
     s=0
-    ctypes.windll.user32.SetCursorPos(1150, 560) #860, 400
+    x,y=recolute(1150,560,1920,1080)
+    print(x,y)
+    ctypes.windll.user32.SetCursorPos(x,y) #860, 400
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    ctypes.windll.user32.SetCursorPos(1104,667) #840, 530
+    x,y=recolute(1104,667,1920,1080)
+    ctypes.windll.user32.SetCursorPos(x,y) #840, 530
     time10min(1)
     return
 def alkaa3():
