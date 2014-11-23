@@ -10,18 +10,7 @@ iqi=False
 #sitten ctypes windll set cursorpositioneihin laitetaan sulkuihin x , y parametreiksi
 #pitäis toimia nyt kaikilla näytöillä
 #sama ennen kaikkia hiiren siirtoja
-def stopperi():
-    global iqi
-    iqi=True
-    return
 
-def päällä():
-    nappi1.Destroy()
-    nappi2.Destroy()
-    stopnappi=Button(ikkuna,Label="stop",command = stopperi)
-    stopnappi.pack()
-    
-    return
 
 def kerää3():
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
@@ -59,7 +48,7 @@ def kerää3():
 
 def kerää1():
     #ihan ylhäällä TODO lista
-    global iqi
+    
     x,y=recolute(1278,277,1920,1080)
     ctypes.windll.user32.SetCursorPos(x,y)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
@@ -70,10 +59,12 @@ def kerää1():
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
     x,y=recolute(1135,645,1920,1080)
     ctypes.windll.user32.SetCursorPos(x,y) #8
-    time.sleep(1)
+    wer=ikkuna.after(1000,jatka)
+    return
+def jatka():
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    päällä()
+    
     
     time10min(1)
     return
