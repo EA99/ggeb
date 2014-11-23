@@ -59,15 +59,16 @@ def kerää1():
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
     x,y=recolute(1135,645,1920,1080)
     ctypes.windll.user32.SetCursorPos(x,y) #8
-    wer=ikkuna.after(1000,jatka)
-    return
-def jatka():
+    time.sleep(1)
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
-    
-    
-    time10min(1)
+    alkaa1()
     return
+    
+    
+    
+    
+    
 
 def time10min(numero):
     if numero == 1:
@@ -90,9 +91,9 @@ def recolute(x,y,screenx,screeny):
     return newsx,newsy
 
 def alkaa1():
-    s=0
+    
     x,y=recolute(1150,560,1920,1080)
-    print(x,y)
+    
     ctypes.windll.user32.SetCursorPos(x,y) #860, 400
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
     ctypes.windll.user32.mouse_event(4, 0, 0, 0,0)
@@ -100,6 +101,7 @@ def alkaa1():
     ctypes.windll.user32.SetCursorPos(x,y) #840, 530
     time10min(1)
     return
+
 def alkaa3():
     s=0
     ctypes.windll.user32.SetCursorPos(1150, 560)
