@@ -129,6 +129,14 @@ def alkaa3():
     time10min(3)
     return
 
+
+def värväysjakeräys():
+
+
+
+    return
+
+
 #ihan ylhäällä todo lista
 ikkuna = Tk()
 ikkuna.title("ggeb")
@@ -136,6 +144,8 @@ ikkuna.geometry("250x150")
 nappi1=Button(ikkuna,text="kerää veroja 1.p",command=alkaa1)
 nappi2=Button(ikkuna,text="kerää veroja 3.p",command=alkaa3)
 nappi1.pack(side=LEFT)
+nappi3=Button(ikkuna,text="kerää ja värvää",command=värväysjakeräys)
+nappi3.pack(side=LEFT)
 nappi2.pack(side=LEFT)
 ikkuna.mainloop()
     
