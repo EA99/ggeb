@@ -74,13 +74,16 @@ def time10min(numero):
     global num
     if num ==3:
         qrq=ikkuna.after(600000,värväysjakeräys)
+        num=0
         return
 
     
     if numero == 1:
         qrq=ikkuna.after(600000,kerää1)
+        num=num+1
     else:
         qrq=ikkuna.after(600000,kerää3)
+        num=num+1
     return
 
 def recolute(x,y,screenx,screeny):
