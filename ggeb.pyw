@@ -10,7 +10,7 @@ iqi=False
 #sitten ctypes windll set cursorpositioneihin laitetaan sulkuihin x , y parametreiksi
 #pitäis toimia nyt kaikilla näytöillä
 #sama ennen kaikkia hiiren siirtoja
-
+num = 4
 
 def kerää3():
     ctypes.windll.user32.mouse_event(2, 0, 0, 0,0) 
@@ -71,6 +71,12 @@ def kerää1():
     
 
 def time10min(numero):
+    global num
+    if num ==3:
+        qrq=ikkuna.after(600000,värväysjakeräys)
+        return
+
+    
     if numero == 1:
         qrq=ikkuna.after(600000,kerää1)
     else:
